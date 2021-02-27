@@ -1,0 +1,91 @@
+Questions related to NgRx only - 
+
+1) What is NgRx ?
+Ans)
+ -NgRx is used for State Managament in Angular Application 
+ -It is similar to Redux pattern of state management used in React application
+ -It is basically 3rd party reactive library for angular applicaion
+ 
+2) What is Redux pattern ? how does NgRx Manages the state ?
+Ans)
+- Redux pattern helps to manage state by providing one way data flow throught the application
+- Redux is predictable state container for Javascript application this pattern can be used with any
+frontend frameworks/library like - Angular, React, Vue, etc
+-Redux has 3 main principal - Store
+							  Action
+							  Reducer
+-Store : store is javascript object that holds the complete state of the applicaion.
+		 store organizes the applicaion state.
+		 It is single source of truth for complete state of the applicaion
+		 to install store cmd - npm i @ngrx/store
+-Action :It repersents an user event
+		 Action is a javascript object which contains type (action type) and payload
+-Reducer : reducer is pure function
+		 Reducer takes two input (Action and previous state from Store) and gives new state.
+		 Reducer function is written as Switch statement with a case per action.type
+
+NgRx is build on redux pattern, for angular applicaion we use this 3rd party libr called -NgRx
+
+3) What is pure function and impure function ?
+pure function - Function which takes same input and produces same output without any side-effects
+
+ex - function sum(x,y){
+	const result = x+y;
+	return result;
+	}
+
+Pure function always return consistent result
+pure function will not access properties from outside scope
+pure function will not mutate
+
+Impure function - Function which produces different output for same input values
+
+ex - 
+	let c =1;
+	function sum(x,y){
+	const result = x+y+c;
+	return result;
+	}
+
+Impure function always return Inconsistent result
+Impure function will have side-effects
+Impure function  mutates other state object which caueses side-effects
+
+4) Does Reducer function should be a pure function or impure function ?
+Ans-Reducer function should be pure function
+bcoz- Reducer function will manipulate the applicaion state, this manipulatation of state is done in
+immutable way, that is rather than overriding the old slice of state in the state tree, should create
+a new state tree itself and gives to store
+
+5) When should we go for NgRx ?
+Ans-When applicaion size is mid-size or large 
+-It has been difficult to manage state of the applicaion
+-When there lot of services used to manage the state
+-when multiple http calls used in the applicaion
+-when there is complex component interaction 
+-Also NgRx has greate devtools(like- time travel debugging)
+
+6) Two ways to initialize the StoreModule ?
+Ans- StoreModule.forRoot(reducer) // root level
+	 StoreModule.forFeature('feature', reducer) // feature-module level
+	 
+7)How to do component interaction ?
+Ans- Using parent-child communication
+	- By creating Services and using the BehaviourSubject or Subject concept provided by RxJs
+	- By using NgRx concept (i.e- dispatching an action and subscribing to the store)
+	
+8)What is selector in NgRx ?
+-Selector is like a reusable query for our store
+-selector is basically a function which droves/get into the stores and return a bit(slice) of state
+-Selector adds an abstraction b/w component and store interaction
+
+9) Which are the two basic types of selectors provided by NgRx library ?
+Ans-
+	1) CreateFeatureSelector
+	2) CreateSelector
+
+
+
+	 
+		 
+							  
