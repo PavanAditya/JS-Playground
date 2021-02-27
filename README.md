@@ -6,4 +6,4 @@ Play around some minor concepts for getting a better understanding of JS
 Command for executing any file:
 `node <path-to-file>/<file-name>`
 
-Basic codes Courtesy: ![https://github.com/tsabunkar](https://github.com/tsabunkar) 😉
+Basic codes Courtesy: [Tejas Sabunkar](https://github.com/tsabunkar "Tejas Sabunkar") 😉
