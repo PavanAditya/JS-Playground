@@ -6,4 +6,6 @@ function showState() {
     console.log("Ready");
 }
 
-showState(); // output:
+showState(); // ? output: Idle
+
+// ! Explanation in host_2.js
