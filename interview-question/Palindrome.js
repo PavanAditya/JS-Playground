@@ -11,7 +11,8 @@ function isPalindrome(num) {
 function reverseNumber(s) {
     s = s.toString();
     const val = s.split("").reverse().join("");
-    return parseInt(val)
+    // return parseInt(val) // ? Send as int for getting the lowest palindrome number for the given input
+    return val // ? Send as string for getting the direct palindrome number for the given input (same num appended at the end)
 }
 
 function checkAndGeneratePalindrome(num) {
@@ -27,6 +28,6 @@ function checkAndGeneratePalindrome(num) {
 
 console.log(checkAndGeneratePalindrome(49))
 // console.log(checkAndGeneratePalindrome(55))
-console.log(checkAndGeneratePalindrome(525))
-// console.log(checkAndGeneratePalindrome(52))
+// console.log(checkAndGeneratePalindrome(525))
+console.log(checkAndGeneratePalindrome(52))
 
