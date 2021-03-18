@@ -1,0 +1,3 @@
+This is a sample text file used for checking on the transform stream.
+Transform stream works like a pipe between the read and the write streams.
+We are replacing the required character in the source file into the new character we want and will be sending it to the destination file.

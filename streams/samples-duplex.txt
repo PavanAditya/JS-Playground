@@ -1,0 +1,1 @@
+This is just a sample for getting cloned into another .txt file using streams

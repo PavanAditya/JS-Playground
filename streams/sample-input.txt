@@ -1,0 +1,3 @@
+New File Created Successfully
+sample input entered
+working as expected
