@@ -16,4 +16,10 @@ newChild.send('Parent sent the code - 313.'); // ? Msg to the child process is s
 newChild.on('message', (msg) => console.log('Parent:', msg)); // ? Any msgs coming form the child process will be caught here and will be executed on it.
 newChild.on('exit', (msg) => console.log('Exitted with msg', msg)); // ? If the chuld process emits the exit event, it is caught here and will stop the termination of the child process.
 
-console.log('Child pid:', newChild.pid); // ? Will print the Process ID of the chuld process. 
+// ? Kills the child process after the required condition is met. Can be used to kill the child process from the parent instead exitting from the child process
+// ! newChild.kill();
+
+// ? Gives the 'killed' status of the created child process. If true, it indicates that the child process is killed.
+console.log(newChild.killed);
+
+console.log('Child pid:', newChild.pid); // ? Will print the Process ID of the child process. 
