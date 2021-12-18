@@ -9,8 +9,10 @@ function x() {
     var a = "I am outside function y()";
 
 }
-x(); // output -
+x(); // output - undefined
 
+
+// ! the value of a is declared after the function and also after the func invocation, so the value of a is not assigned. Hence the o/p gives old value of a (undefined).
 
 
 function x() {
@@ -22,14 +24,12 @@ function x() {
     y();
 
 }
-x(); // output -
+x(); // output - I am outside function y()
+
+// ! though the value of a is declared after the function, by the time of func invocation the value of a is already assigned. Hence the o/p gives latest value of a.
 
 
-
-
-// !---------------------------------------------------------------------------------------
-
-showState(); // output: 
+showState(); // output: Ready
 
 function showState() {
     console.log("Ready");
@@ -39,6 +39,9 @@ var showState = function () {
     console.log("Idle");
 };
 
+showState(); // output: Idle
+
+// ! Variable hoisting is done only for declared variable, value is not hoisted. Function hoisting is done along with the function's value.
 
 
 function outerFun() {
@@ -54,6 +57,8 @@ function outerFun() {
     console.log(a); //output -
 }
 outerFun();
+
+// ! Until and unless a function is invoked, the code inside the func will get not executed.
 
 
 // !---------------------------------------------------------------------------------------
@@ -101,8 +106,6 @@ console.log(showName("Sachin", "Tendulkar")); //output-
 
 
 
-
-
 function showName(firstName, lastName) {
 
     return makeFullName();
@@ -127,8 +130,6 @@ console.log(arr); // output
 var middle = [3, 4];
 var arr = [1, 2, ...middle, 5, 6];
 console.log(arr); // output
-
-
 
 
 var name = "dhoni";
