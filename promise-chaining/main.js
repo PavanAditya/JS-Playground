@@ -27,7 +27,7 @@ const getTodos = (resource) => {
                 })
                 .then(res => {
                     console.log('Second', res);
-                    return getTodos('todos/sleep.json');
+                    return getTodos('toos/sleep.json');
                 })
                 .then(res => {
                     console.log('Third', res);
@@ -35,10 +35,10 @@ const getTodos = (resource) => {
                 })
                 .catch(err => {
                     console.log('Child Rejected -', err);
-                    return getTodos('todos/eat.json')
+                    return getTodos('todo/eat.json')
                 })
                 .then(res => {
-                    console.log('Catch Connected', res);
+                    console.log('Catch Connected', res); // ? this will be executed for third promise and also for the first catch block.
                 })
                 .catch(err => {
                     console.log('Second Catch Rejected', err);
