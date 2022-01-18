@@ -1,4 +1,5 @@
 const compareObjects = (obj1, obj2) => {
+    console.log(Object.entries(obj1)); // ? Can help in getting the key value pairs of an object in the form of an array.
     let objectsMatching = true;
     if (Object.keys(obj1).length !== Object.keys(obj2).length) {
         objectsMatching = false;
