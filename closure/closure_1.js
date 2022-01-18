@@ -8,9 +8,9 @@ function showName(firstName, lastName) {
     function makeFullName() {
         return nameIntro + " " + firstName + " " + lastName;
     }
-    
+
     var nameIntro = "Hi,"; // ? var dec here cannot be used inside the child func as it is init after return
-    
+
 }
 console.log(showName("I am", "Pavan"));
 // ? OP: (Hi, I am Pavan) if var is init before return 
@@ -42,22 +42,22 @@ z()()();
 
 // ! Example 3
 
-function x() {
+function p() {
     var a = 1;
-    function y() {
+    function q() {
         var b = 2;
-        function z() {
+        function r() {
             var c = 3;
-            console.log(a, b, c); // ?  1 2 3
+            console.log(a, b, c); // ?  100 2 3
         }
-        return z;
+        return r;
     }
     a = 100;
-    return y;
+    return q;
 };
 
-let z = x;
-z()()(); // ? 100 2 3
-// ? The value of a is 100, because the function returned by x is returned along with it's lexical scope.
+let r = p;
+r()()(); // ? 100 2 3
+// ? The value of a is 100, because the function returned by p is returned along with it's lexical scope.
 // ? The Lexical Scope of a function will always remember the reference (or) the location of a variable but not the value of a variable.
-// ? Hence the reference location of a is updated with a new value, function y's lexical scope also gets the value of a as 100.
+// ? Hence the reference location of a is updated with a new value, function q's lexical scope also gets the value of a as 100.
