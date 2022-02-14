@@ -116,6 +116,7 @@ const printTopView = (node) => {
     topWidthBasedMap.map((key, index) => {
         printViewString = printViewString + (key.value + ((index === topWidthBasedMap.length - 1) ? '' : ', '));
     });
+    console.log(topWidthBasedMap);
     console.log('Top View of the given Binary Tree ->', printViewString);
 };
 
@@ -164,9 +165,9 @@ const mainFunctionForAllViews = () => {
         }
     };
     printTopView(node);
-    printBottomView(node);
-    printLeftView(node);
-    printRightView(node);
+    // printBottomView(node);
+    // printLeftView(node);
+    // printRightView(node);
 };
 
 mainFunctionForAllViews();
