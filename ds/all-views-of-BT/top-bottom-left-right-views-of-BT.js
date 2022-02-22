@@ -164,8 +164,8 @@ const mainFunctionForAllViews = () => {
             right: { value: 7, left: null, right: { value: 11, left: null, right: null }}
         }
     };
-    printTopView(node);
-    // printBottomView(node);
+    // printTopView(node);
+    printBottomView(node);
     // printLeftView(node);
     // printRightView(node);
 };

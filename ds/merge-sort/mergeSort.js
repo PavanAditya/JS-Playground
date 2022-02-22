@@ -28,3 +28,12 @@ function mergeSort(arr) {
 
 console.log(mergeSort([20, 50, 70, 90, 10, 40]));
 // console.log(mergeSort([10, 10, 10, 90, 10, 10]));
+
+// ? Logic:
+/*
+* 1. Recursively divide the array until least possible size i.e. 1
+* 2. With the least possible size, merge the two subarrays in ASO
+* 3. Return the merged array nested to the parent recursive call.
+* 4. Repeat the same process until the recursion ends.
+* 5. Return the final merged array.
+*/
