@@ -21,13 +21,13 @@ const formTopWidthBasedMap = (node, height, width) => {
     });
     if (flag) {
         if (topWidthBasedMap[matchedIndex].width === width && topWidthBasedMap[matchedIndex].height > height) {
-            topWidthBasedMap[matchedIndex].width = width;
+            topWidthBasedMap[matchedIndex].height = height;
             topWidthBasedMap[matchedIndex].value = node.value;
         } else if (topWidthBasedMap[matchedIndex].width === width && topWidthBasedMap[matchedIndex].height === height) {
-            topWidthBasedMap.push({height, width, value: node.value});
+            topWidthBasedMap.push({ height, width, value: node.value });
         }
     } else {
-        topWidthBasedMap.push({height, width, value: node.value});
+        topWidthBasedMap.push({ height, width, value: node.value });
     }
     formTopWidthBasedMap(node.left, height + 1, width - 1);
     formTopWidthBasedMap(node.right, height + 1, width + 1);
@@ -47,15 +47,13 @@ const formBottomWidthBasedMap = (node, height, width) => {
     });
     if (flag) {
         if (bottomWidthBasedMap[matchedIndex].width === width && bottomWidthBasedMap[matchedIndex].height < height) {
-            bottomWidthBasedMap[matchedIndex].width = width;
+            bottomWidthBasedMap[matchedIndex].height = height;
             bottomWidthBasedMap[matchedIndex].value = node.value;
-            console.log(node, height, width, bottomWidthBasedMap[matchedIndex]) // ! Need an exact check
         } else if (bottomWidthBasedMap[matchedIndex].width === width && bottomWidthBasedMap[matchedIndex].height === height) {
-            console.log(node)
-            bottomWidthBasedMap.push({height, width, value: node.value});
+            bottomWidthBasedMap.push({ height, width, value: node.value });
         }
     } else {
-        bottomWidthBasedMap.push({height, width, value: node.value});
+        bottomWidthBasedMap.push({ height, width, value: node.value });
     }
     formBottomWidthBasedMap(node.left, height + 1, width - 1);
     formBottomWidthBasedMap(node.right, height + 1, width + 1);
@@ -79,7 +77,7 @@ const formLeftHeightBasedMap = (node, height, width) => {
             leftHeightBasedMap[matchedIndex].value = node.value;
         }
     } else {
-        leftHeightBasedMap.push({height, width, value: node.value});
+        leftHeightBasedMap.push({ height, width, value: node.value });
     }
     formLeftHeightBasedMap(node.left, height + 1, width - 1);
     formLeftHeightBasedMap(node.right, height + 1, width + 1);
@@ -103,7 +101,7 @@ const formRightHeightBasedMap = (node, height, width) => {
             rightHeightBasedMap[matchedIndex].value = node.value;
         }
     } else {
-        rightHeightBasedMap.push({height, width, value: node.value});
+        rightHeightBasedMap.push({ height, width, value: node.value });
     }
     formRightHeightBasedMap(node.left, height + 1, width - 1);
     formRightHeightBasedMap(node.right, height + 1, width + 1);
@@ -111,7 +109,7 @@ const formRightHeightBasedMap = (node, height, width) => {
 
 const printTopView = (node) => {
     formTopWidthBasedMap(node, 0, 0);
-    topWidthBasedMap.sort((a,b) => (a.width - b.width));
+    topWidthBasedMap.sort((a, b) => (a.width - b.width));
     let printViewString = '';
     topWidthBasedMap.map((key, index) => {
         printViewString = printViewString + (key.value + ((index === topWidthBasedMap.length - 1) ? '' : ', '));
@@ -122,17 +120,18 @@ const printTopView = (node) => {
 
 const printBottomView = (node) => {
     formBottomWidthBasedMap(node, 0, 0);
-    bottomWidthBasedMap.sort((a,b) => (a.width - b.width));
+    bottomWidthBasedMap.sort((a, b) => (a.width - b.width));
     let printViewString = '';
     bottomWidthBasedMap.map((key, index) => {
         printViewString = printViewString + (key.value + ((index === bottomWidthBasedMap.length - 1) ? '' : ', '));
     });
+    console.log(bottomWidthBasedMap);
     console.log('Bottom View of the given Binary Tree ->', printViewString);
 };
 
 const printLeftView = (node) => {
     formLeftHeightBasedMap(node, 0, 0);
-    leftHeightBasedMap.sort((a,b) => (a.height - b.height));
+    leftHeightBasedMap.sort((a, b) => (a.height - b.height));
     let printViewString = '';
     leftHeightBasedMap.map((key, index) => {
         printViewString = printViewString + (key.value + ((index === leftHeightBasedMap.length - 1) ? '' : ', '));
@@ -142,7 +141,7 @@ const printLeftView = (node) => {
 
 const printRightView = (node) => {
     formRightHeightBasedMap(node, 0, 0);
-    rightHeightBasedMap.sort((a,b) => (a.height - b.height));
+    rightHeightBasedMap.sort((a, b) => (a.height - b.height));
     let printViewString = '';
     rightHeightBasedMap.map((key, index) => {
         printViewString = printViewString + (key.value + ((index === rightHeightBasedMap.length - 1) ? '' : ', '));
@@ -160,12 +159,12 @@ const mainFunctionForAllViews = () => {
         },
         right: {
             value: 3,
-            left: { value: 6, left: null, right: { value: 10, left: null, right: null }},
-            right: { value: 7, left: null, right: { value: 11, left: null, right: null }}
+            left: { value: 6, left: null, right: { value: 10, left: null, right: null } },
+            right: { value: 7, left: null, right: { value: 11, left: null, right: null } }
         }
     };
-    // printTopView(node);
-    printBottomView(node);
+    printTopView(node);
+    // printBottomView(node);
     // printLeftView(node);
     // printRightView(node);
 };
