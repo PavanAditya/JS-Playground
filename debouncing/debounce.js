@@ -1,7 +1,7 @@
 let count = 0;
 
-let fetchDataCall = (counterName, test) => {
-    console.log('Data fetch call done: ' + ++count + (count === 1 ? ' time by ' : ' times by') + counterName);
+let fetchDataCall = (counterName) => {
+    console.log(`Data fetch call done: ${++count}${(count === 1 ? ' time by' : ' times by')}${counterName}`);
 };
 
 let debounceData = (fn, timeout) => {
