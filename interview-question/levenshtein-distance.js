@@ -1,7 +1,7 @@
 // ? Question
 // TODO: Calculate the similarity between two strings and return the percentage/probability of both being the same.
 
-// ? Approach
+// ? Approach 1
 // Levenshtein distance Approach. Wiki: https://en.wikipedia.org/wiki/Levenshtein_distance
 
 // ? JS
@@ -61,3 +61,6 @@ function similarity(s1, s2) {
 
 // ? Sample Input/Output
 similarity('Stack Overflow','Stack Ovrflw') // Expected Output: 0.8571428571428571
+
+
+// ! Question and Example Solutions Reference: https://sumn2u.medium.com/string-similarity-comparision-in-js-with-examples-4bae35f13968
