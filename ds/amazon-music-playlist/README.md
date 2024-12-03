@@ -1,4 +1,4 @@
-### Problem: Design a Music Playlist
+### Problem: Design Amazon Music Playlist
 
 #### Background
 
