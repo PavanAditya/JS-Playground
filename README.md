@@ -6,6 +6,7 @@ This repository is a collection of practice problems I'm working on to improve m
 ### Structure:
 
 **DSA & Algorithms:** This folder contains problems related to data structures, algorithms, and dynamic programming techniques.
+
 **JavaScript Fundamentals:** This folder explores core concepts and interview questions specific to vanilla JavaScript.
 
 ### Contribution:
